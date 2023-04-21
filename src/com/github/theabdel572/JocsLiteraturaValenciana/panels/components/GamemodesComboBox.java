@@ -23,7 +23,14 @@ public class GamemodesComboBox extends JComboBox<String> {
     private class Listener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            switch (getSelectedGamemode()){
+                case "Joc de memòria":
+                    break;
+                case "Pedra paper i tisores":
+                    break;
+                case "FlashCards":
+                    break;
+            }
         }
     }
 }
