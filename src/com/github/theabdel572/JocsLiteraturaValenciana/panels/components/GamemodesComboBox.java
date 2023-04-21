@@ -15,6 +15,11 @@ public class GamemodesComboBox extends JComboBox<String> {
         addActionListener(new Listener());
     }
 
+
+    public String getSelectedGamemode() {
+        return getSelectedItem().toString();
+    }
+
     private class Listener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
