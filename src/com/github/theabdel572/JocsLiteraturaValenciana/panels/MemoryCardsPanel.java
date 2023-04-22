@@ -29,8 +29,7 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
 
     private List<String> shuffleCards(){
         List<String> keys = new ArrayList<>(cardRelations.keySet());
-        List<String> values = new ArrayList<>(cardRelations.values());
-        keys.addAll(values);
+        keys.addAll(cardRelations.values());
         Collections.shuffle(keys);
         return keys;
     }
