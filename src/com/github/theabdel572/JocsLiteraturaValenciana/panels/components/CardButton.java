@@ -20,6 +20,9 @@ public class CardButton extends JButton {
     }
 
     private class Listener implements ActionListener {
+
+        // A timer that iterates over all the buttons in the parent panel and sets their text to "".
+        // It also resets the card clicks to 0.
         Timer timer = new Timer(2000, e1 -> {
             Arrays.stream(parentPanel.getComponents()).iterator().forEachRemaining(component -> {
                 if(component instanceof CardButton){
@@ -38,8 +41,6 @@ public class CardButton extends JButton {
                 setText(text);
                 parentPanel.addCardClick();
             }
-
-            System.out.println("Card clicks: " + parentPanel.getCardClicks());
         }
     }
 }
