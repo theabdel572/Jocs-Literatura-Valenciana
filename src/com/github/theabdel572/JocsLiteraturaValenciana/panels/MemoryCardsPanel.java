@@ -2,8 +2,11 @@ package com.github.theabdel572.JocsLiteraturaValenciana.panels;
 
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.CardButton;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
@@ -21,13 +24,21 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
     public MemoryCardsPanel(JFrame frame) {
         this.frame = frame;
         setLayout(new GridLayout(4, 4, 10, 10));
-        setBackground(Color.RED);
 
         for(String card : shuffleCards()){
             add(new CardButton(this, card));
         }
     }
 
+
+    public void paintComponent(Graphics page) {
+        super.paintComponent(page);
+        try {
+            page.drawImage(ImageIO.read(new File("src/com/github/theabdel572/JocsLiteraturaValenciana/resources/background1.png")), 0, 0, null);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     // Execute the proper actions when a correct pair of cards is clicked.
     public void setPairCompleted(){
