@@ -71,20 +71,19 @@ public class CardButton extends JButton {
                     parentPanel.getPairClickedCardsText()[1] = text;
                     parentPanel.getPairClickedCards()[1] = (CardButton) e.getSource();
 
+                    // Check if the two cards clicked are a pair by comparing if the first card is a value
+                    // instead of a key in the cardRelations map.
                     for (Map.Entry<String, String> entry : parentPanel.getCardRelations().entrySet()) {
                         if (entry.getValue().equals(parentPanel.getPairClickedCardsText()[0])) {
-                            String key = entry.getKey();
-                            if(key.equals(parentPanel.getPairClickedCardsText()[1])){
+                            if (entry.getKey().equals(parentPanel.getPairClickedCardsText()[1])) {
                                 parentPanel.setPairCompleted();
-                                onSecondButtonClickedActions(timer);
-                                return;
                             }
-
                             onSecondButtonClickedActions(timer);
                             return;
                         }
                     }
 
+                    // Check if the two cards clicked are a pair by comparing if the first card is a key.
                     if(parentPanel.getCardRelations().get(parentPanel.getPairClickedCardsText()[0]).equals(parentPanel.getPairClickedCardsText()[1])){
                         parentPanel.setPairCompleted();
                         onSecondButtonClickedActions(timer);
