@@ -15,7 +15,7 @@ public class GamemodesComboBox extends JComboBox<String> {
 
     //Constructor that gets the parent panel of the JComboBox as an argument.
     public GamemodesComboBox(AppPanels parentPanel) {
-        super(new String[]{"Joc de memòria", "Pedra paper i tisores", "FlashCards"});
+        super(new String[]{"Joc de memòria", "FlashCards"});
         this.parentPanel = parentPanel;
         //Setting Properties
         this.setBackground(Color.CYAN);
@@ -43,15 +43,9 @@ public class GamemodesComboBox extends JComboBox<String> {
         @Override
         public void actionPerformed(ActionEvent e) {
             JFrame parentFrame = parentPanel.getParentFrame();
-            switch (getSelectedGamemode()){
-                case "Joc de memòria":
-                    changeGamemodePanel(new MemoryCardsPanel(parentFrame));
-                    break;
-                case "Pedra paper i tisores":
-                    break;
-                case "FlashCards":
-                    changeGamemodePanel(new FlashcardsPanel(parentFrame));
-                    break;
+            switch (getSelectedGamemode()) {
+                case "Joc de memòria" -> changeGamemodePanel(new MemoryCardsPanel(parentFrame));
+                case "FlashCards" -> changeGamemodePanel(new FlashcardsPanel(parentFrame));
             }
         }
     }
