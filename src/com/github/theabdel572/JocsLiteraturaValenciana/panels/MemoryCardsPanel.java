@@ -13,13 +13,16 @@ import java.util.List;
 public class MemoryCardsPanel extends JPanel implements AppPanels{
     private CardButton[] pairClickedCards = new CardButton[2];
     private String[] pairClickedCardsText = new String[2];
+    private int cardClicks = 0;
+    private final JFrame frame;
     private final Map<String, String> cardRelations = Map.ofEntries(
             Map.entry("a", "b"),
             Map.entry("c", "d"),
-            Map.entry("e", "f")
+            Map.entry("e", "f"),
+            Map.entry("g", "h"),
+            Map.entry("i", "j"),
+            Map.entry("k", "l")
     );
-    private int cardClicks = 0;
-    private final JFrame frame;
 
     public MemoryCardsPanel(JFrame frame) {
         this.frame = frame;
@@ -45,8 +48,9 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
         for(CardButton cardButton : getPairClickedCards()){
             cardButton.setEnabled(false);
             cardButton.setPaired(true);
-            cardButton.setBackground(Color.GREEN);
-            cardButton.setAction(null);
+            cardButton.setVisible(false);
+//            cardButton.setBackground(Color.GREEN);
+//            cardButton.setAction(null);
         }
     }
 
