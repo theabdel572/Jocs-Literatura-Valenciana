@@ -14,7 +14,7 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
     private CardButton[] pairClickedCards = new CardButton[2];
     private String[] pairClickedCardsText = new String[2];
     private int cardClicks = 0;
-    private final JFrame frame;
+    private final JFrame parentFrame;
     private final Map<String, String> cardRelations = Map.ofEntries(
             Map.entry("a", "b"),
             Map.entry("c", "d"),
@@ -24,8 +24,8 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
             Map.entry("k", "l")
     );
 
-    public MemoryCardsPanel(JFrame frame) {
-        this.frame = frame;
+    public MemoryCardsPanel(JFrame parentFrame) {
+        this.parentFrame = parentFrame;
         setLayout(new GridLayout(4, 4, 10, 10));
 
         for(String card : shuffleCards()){
@@ -49,8 +49,10 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
             cardButton.setEnabled(false);
             cardButton.setPaired(true);
             cardButton.setVisible(false);
-//            cardButton.setBackground(Color.GREEN);
-//            cardButton.setAction(null);
+            /* Other options:
+            cardButton.setBackground(Color.GREEN);
+            cardButton.setAction(null);
+            */
         }
     }
 
@@ -115,6 +117,6 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
     }
 
     public JFrame getParentFrame() {
-        return frame;
+        return parentFrame;
     }
 }

@@ -9,10 +9,10 @@ import java.io.File;
 import java.io.IOException;
 
 public class UpperBarPanel extends JPanel implements AppPanels{
-    private final JFrame frame;
+    private final JFrame parentFrame;
 
-    public UpperBarPanel(JFrame frame) {
-        this.frame = frame;
+    public UpperBarPanel(JFrame parentFrame) {
+        this.parentFrame = parentFrame;
         //Setting Properties
         setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
         //Adding Components
@@ -37,6 +37,6 @@ public class UpperBarPanel extends JPanel implements AppPanels{
 
     @Override
     public JFrame getParentFrame() {
-        return frame;
+        return parentFrame;
     }
 }
