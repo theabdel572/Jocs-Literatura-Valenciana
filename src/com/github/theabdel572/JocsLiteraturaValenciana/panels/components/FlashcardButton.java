@@ -11,15 +11,20 @@ public class FlashcardButton extends JButton {
         addActionListener(e -> {
             JFrame flashcardFrame = new JFrame();
             JPanel flashcardPanel = new JPanel();
+            flashcardFrame.setTitle(text);
             flashcardPanel.setLayout(new BoxLayout(flashcardPanel, BoxLayout.Y_AXIS));
 
-            Arrays.stream(info).forEach(s -> {
-                JLabel label = new JLabel("- " + s);
-                Font font = new Font("Consolas", Font.PLAIN, 16);
-                label.setFont(font);
-                flashcardPanel.add(Box.createVerticalStrut(10));
-                flashcardPanel.add(label);
-            });
+            JTextArea textArea = new JTextArea();
+            textArea.setEditable(false);
+            textArea.setFont(new Font("Consolas", Font.PLAIN, 16));
+            textArea.setLineWrap(true);
+            textArea.setWrapStyleWord(true);
+            textArea.setOpaque(false);
+
+            Arrays.stream(info).forEach(s -> textArea.append("- " + s + "\n\n"));
+
+            flashcardPanel.add(Box.createVerticalStrut(10));
+            flashcardPanel.add(textArea);
 
             flashcardFrame.setSize(500, 500);
             flashcardFrame.add(flashcardPanel);
