@@ -16,12 +16,7 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
     private int cardClicks = 0;
     private final JFrame parentFrame;
     private final Map<String, String> cardRelations = Map.ofEntries(
-            Map.entry("a", "b"),
-            Map.entry("c", "d"),
-            Map.entry("e", "f"),
-            Map.entry("g", "h"),
-            Map.entry("i", "j"),
-            Map.entry("k", "l")
+            Map.entry("Pompeu Fabra", "Va ser el principal artífex de la normativització de la llengua catalana moderna.")
     );
 
     public MemoryCardsPanel(JFrame parentFrame) {
