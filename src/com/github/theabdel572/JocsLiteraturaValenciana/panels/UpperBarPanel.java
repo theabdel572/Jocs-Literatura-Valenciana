@@ -1,5 +1,6 @@
 package com.github.theabdel572.JocsLiteraturaValenciana.panels;
 
+import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.CreditsButton;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.GamemodesComboBox;
 
 import javax.imageio.ImageIO;
@@ -17,6 +18,7 @@ public class UpperBarPanel extends JPanel implements AppPanels{
         setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
         //Adding Components
         add(new GamemodesComboBox(this));
+        add(new CreditsButton());
     }
 
 
