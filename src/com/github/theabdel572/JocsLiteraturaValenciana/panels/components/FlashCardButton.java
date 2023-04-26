@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Arrays;
 
-public class FlashcardButton extends JButton {
+public class FlashCardButton extends JButton {
 
-    public FlashcardButton(String text, String[] info) {
+    public FlashCardButton(String text, String[] info) {
         super(text);
         addActionListener(e -> {
             JFrame flashcardFrame = new JFrame();

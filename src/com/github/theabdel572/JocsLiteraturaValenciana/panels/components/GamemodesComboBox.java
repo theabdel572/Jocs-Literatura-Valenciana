@@ -1,7 +1,7 @@
 package com.github.theabdel572.JocsLiteraturaValenciana.panels.components;
 
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.AppPanels;
-import com.github.theabdel572.JocsLiteraturaValenciana.panels.FlashcardsPanel;
+import com.github.theabdel572.JocsLiteraturaValenciana.panels.FlashCardsPanel;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.MemoryCardsPanel;
 
 import javax.swing.*;
@@ -45,7 +45,7 @@ public class GamemodesComboBox extends JComboBox<String> {
             JFrame parentFrame = parentPanel.getParentFrame();
             switch (getSelectedGamemode()) {
                 case "Joc de memòria" -> changeGamemodePanel(new MemoryCardsPanel(parentFrame));
-                case "FlashCards" -> changeGamemodePanel(new FlashcardsPanel(parentFrame));
+                case "FlashCards" -> changeGamemodePanel(new FlashCardsPanel(parentFrame));
             }
         }
     }
