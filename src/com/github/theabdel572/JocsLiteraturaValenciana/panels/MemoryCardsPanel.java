@@ -40,6 +40,8 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
 
     // Execute the proper actions when a correct pair of cards is clicked.
     public void setPairCompleted(){
+        Toolkit.getDefaultToolkit().beep();
+
         for(CardButton cardButton : getPairClickedCards()){
             cardButton.setEnabled(false);
             cardButton.setPaired(true);
