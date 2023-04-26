@@ -26,7 +26,7 @@ public class FlashCardButton extends JButton {
             flashcardPanel.add(Box.createVerticalStrut(10));
             flashcardPanel.add(textArea);
 
-            flashcardFrame.setSize(500, 500);
+            flashcardFrame.setSize(700, 700);
             flashcardFrame.add(flashcardPanel);
             flashcardFrame.setVisible(true);
         });
