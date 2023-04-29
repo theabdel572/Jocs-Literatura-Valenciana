@@ -1,5 +1,6 @@
 package com.github.theabdel572.JocsLiteraturaValenciana.panels.components;
 
+import com.github.theabdel572.JocsLiteraturaValenciana.main.MainFrame;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.AppPanels;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.FlashCardsPanel;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.MemoryCardsPanel;
@@ -24,16 +25,6 @@ public class GamemodesComboBox extends JComboBox<String> {
         addActionListener(new Listener());
     }
 
-    private void changeGamemodePanel(AppPanels panel){
-        JFrame parentFrame = parentPanel.getParentFrame();
-        Container contentPane = parentFrame.getContentPane();
-        BorderLayout layout = (BorderLayout) contentPane.getLayout();
-        contentPane.remove(layout.getLayoutComponent(BorderLayout.CENTER));
-        contentPane.add((Component) panel, BorderLayout.CENTER);
-        parentFrame.revalidate();
-        parentFrame.repaint();
-    }
-
 
     public String getSelectedGamemode() {
         return getSelectedItem().toString();
@@ -42,10 +33,10 @@ public class GamemodesComboBox extends JComboBox<String> {
     private class Listener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            JFrame parentFrame = parentPanel.getParentFrame();
+            MainFrame parentFrame = (MainFrame) parentPanel.getParentFrame();
             switch (getSelectedGamemode()) {
-                case "Joc de memòria" -> changeGamemodePanel(new MemoryCardsPanel(parentFrame));
-                case "FlashCards" -> changeGamemodePanel(new FlashCardsPanel(parentFrame));
+                case "Joc de memòria" -> parentFrame.setCenterPanel(new MemoryCardsPanel(parentFrame));
+                case "FlashCards" -> parentFrame.setCenterPanel(new FlashCardsPanel(parentFrame));
             }
         }
     }
