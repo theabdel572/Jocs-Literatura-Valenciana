@@ -1,5 +1,6 @@
 package com.github.theabdel572.JocsLiteraturaValenciana.main;
 
+import com.github.theabdel572.JocsLiteraturaValenciana.panels.AppPanels;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.MemoryCardsPanel;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.UpperBarPanel;
 
@@ -20,4 +21,20 @@ public class MainFrame extends JFrame {
 
         setVisible(true);
     }
+
+    public AppPanels getCenterPanel(){
+        Container contentPane = getContentPane();
+        BorderLayout layout = (BorderLayout) contentPane.getLayout();
+        return (AppPanels) layout.getLayoutComponent(BorderLayout.CENTER);
+    }
+
+    public void setCenterPanel(AppPanels panel){
+        Container contentPane = getContentPane();
+        BorderLayout layout = (BorderLayout) contentPane.getLayout();
+        contentPane.remove(layout.getLayoutComponent(BorderLayout.CENTER));
+        contentPane.add((Component) panel, BorderLayout.CENTER);
+        revalidate();
+        repaint();
+    }
+
 }
