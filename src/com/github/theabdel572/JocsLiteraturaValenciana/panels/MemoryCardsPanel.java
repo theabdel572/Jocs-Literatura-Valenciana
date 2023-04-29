@@ -15,8 +15,19 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
     private String[] pairClickedCardsText = new String[2];
     private int cardClicks = 0;
     private final JFrame parentFrame;
+
     private final Map<String, String> cardRelations = Map.ofEntries(
-            Map.entry("Pompeu Fabra", "Va ser el principal artífex de la normativització de la llengua catalana moderna.")
+            Map.entry("Pompeu Fabra", "<html>Va ser el principal <br>artífex de la normativització<br> de la llengua catalana moderna.</html>"),
+            Map.entry("Ramon Llull", "<html>Va ser un escriptor, <br>filòsof, teòleg i <br>missioner mallorquí.</html>"),
+            Map.entry("Francesc Eiximenis", "<html>Va ser un escriptor <br>franciscà de la <br>Corona d’Aragó.</html>"),
+            Map.entry("Bernat Metge", "<html>Va ser un escriptor, <br>traductor i primer representant <br>de l’humanisme en les <br>lletres catalanes.</html>"),
+            Map.entry("Joanot Martorell", "<html>Va ser un escriptor <br>valencià, autor de <br>Tirant lo Blanc.</html>"),
+            Map.entry("Anselm Turmeda", "<html>Va ser un escriptor, <br>traductor i poeta <br>mallorquí.</html>"),
+            Map.entry("Sant Vicent Ferrer", "<html>Va ser un religiós <br>dominic valencià que va <br>influir decisivament en el <br>Compromís de Casp i en la <br>resolució del Cisma d’Occident.</html>"),
+            Map.entry("Jordi de Sant Jordi", "<html>Va ser un poeta <br>cortesà i militar.</html>")
+            /*Map.entry("Ausias March", "Va ser un poeta i cavaller valencià medieval."),
+            Map.entry("Joan Roís de Corella", "Va ser senyor de l’alqueria de Beneito i senyor de Miraflor (La Marina Alta)."),
+            Map.entry("Jaume Roig", "Va ser un metge i escriptor valencià, famós per ser l’autor d’Espill o Llibre de les dones, una de les obres més rellevants de la literatura catalana medieval.")*/
     );
 
     public MemoryCardsPanel(JFrame parentFrame) {
