@@ -17,6 +17,7 @@ public class CardButton extends JButton {
         super();
         this.text = text;
         this.parentPanel = parentPanel;
+        setBorder(new RoundedBorder(10));
         addActionListener(new Listener());
     }
 
