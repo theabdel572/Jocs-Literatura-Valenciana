@@ -21,7 +21,8 @@ public class FlashCardButton extends JButton {
             textArea.setWrapStyleWord(true);
             textArea.setOpaque(false);
 
-            Arrays.stream(info).forEach(s -> textArea.append("- " + s + "\n\n"));
+            Arrays.stream(info).forEach(s -> textArea.append(("- " + s + "\n\n")
+                    .replaceAll("<html>", "").replaceAll("</html>", "")));
 
             flashcardPanel.add(Box.createVerticalStrut(10));
             flashcardPanel.add(textArea);
