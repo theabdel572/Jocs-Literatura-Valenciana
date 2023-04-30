@@ -17,11 +17,13 @@ public class FlashCardsPanel extends JPanel implements AppPanels{
         this.parentFrame = parentFrame;
         setLayout(new GridLayout(10, 10, 10, 10));
 
+        // Creating all the FlashCardButtons (taking all the information from the AuthorsInfo enum) and adding them to the panel.
         for (AuthorsInfo author : Set.of(AuthorsInfo.values())){
             add(new FlashCardButton(author.getName() + " (" + author.getBirthYear() + ")", author.getInfo()));
         }
     }
 
+    // Painting the background image.
     public void paintComponent(Graphics page) {
         super.paintComponent(page);
         try {

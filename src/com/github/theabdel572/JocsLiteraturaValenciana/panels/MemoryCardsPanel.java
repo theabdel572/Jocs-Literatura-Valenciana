@@ -12,11 +12,17 @@ import java.util.*;
 import java.util.List;
 
 public class MemoryCardsPanel extends JPanel implements AppPanels{
+    // The CardButton and String arrays that store the clicked cards (which reset after the second card is clicked).
     private CardButton[] pairClickedCards = new CardButton[2];
     private String[] pairClickedCardsText = new String[2];
+    // The amount of cards clicked (which resets after the second card is clicked).
     private int cardClicks = 0;
+
     private final JFrame parentFrame;
 
+    /** The map that stores the cards and their pairs, created with random pair key-values from the AuthorsInfo class.
+     * @see AuthorsInfo#createCardsMap()
+     */
     private final Map<String, String> cardRelations = AuthorsInfo.createCardsMap();
 
 
@@ -24,12 +30,14 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
         this.parentFrame = parentFrame;
         setLayout(new GridLayout(4, 4, 10, 10));
 
+        // Add the shuffled cards from the cardRelations map to the panel.
         for(String card : shuffleCards()){
             add(new CardButton(this, card));
         }
     }
 
 
+    // Paint the background image.
     public void paintComponent(Graphics page) {
         super.paintComponent(page);
         try {
@@ -41,11 +49,11 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
 
     // Execute the proper actions when a correct pair of cards is clicked.
     public void setPairCompleted(){
+        // Play a beep sound when a pair is completed.
         Toolkit.getDefaultToolkit().beep();
 
         for(CardButton cardButton : getPairClickedCards()){
             cardButton.setEnabled(false);
-            cardButton.setPaired(true);
             cardButton.setVisible(false);
         }
     }
@@ -67,7 +75,7 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
         });
     }
 
-    // Shuffle the cards.
+    // Shuffle the cards in the cardRelations map.
     private List<String> shuffleCards(){
         List<String> keys = new ArrayList<>(cardRelations.keySet());
         keys.addAll(cardRelations.values());

@@ -17,9 +17,12 @@ public class CreditsButton extends JButton {
     private final class Listener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Creating and configuring the popup window.
             JOptionPane creditsPane = new JOptionPane();
             creditsPane.setMessage("Desenvolupat per Abdel.\nDiscord: theabdel572#2908");
             creditsPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+
+            // Adding the button to open the github repository.
             creditsPane.setOptions(new Object[]{new JButton("Github"){
                 {
                     addActionListener(e -> {
@@ -30,6 +33,7 @@ public class CreditsButton extends JButton {
                         }
             });}}});
 
+            // Creating and showing the dialog that contains the popup window.
             JDialog dialog = creditsPane.createDialog(CreditsButton.this, "Autor");
             dialog.setVisible(true);
         }

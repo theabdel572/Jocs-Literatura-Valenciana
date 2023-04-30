@@ -25,7 +25,7 @@ public class GamemodesComboBox extends JComboBox<String> {
         addActionListener(new Listener());
     }
 
-
+    //Returns the selected gamemode (the selected item of the JComboBox).
     public String getSelectedGamemode() {
         return getSelectedItem().toString();
     }
@@ -34,6 +34,8 @@ public class GamemodesComboBox extends JComboBox<String> {
         @Override
         public void actionPerformed(ActionEvent e) {
             MainFrame parentFrame = (MainFrame) parentPanel.getParentFrame();
+
+            //Switches the center panel of the parent frame to the selected gamemode.
             switch (getSelectedGamemode()) {
                 case "Joc de memòria" -> parentFrame.setCenterPanel(new MemoryCardsPanel(parentFrame));
                 case "FlashCards" -> parentFrame.setCenterPanel(new FlashCardsPanel(parentFrame));

@@ -105,6 +105,12 @@ public enum AuthorsInfo {
             "<html>Va escriure diverses obres poètiques, entre les quals destaquen L’Atlàntida (1877) i Canigó (1886).</html>"},
             (short) 1845);
 
+    /**
+     * Information of every item of the enum.
+     * @param name A string containing the name of the author.
+     * @param info An array containing strings that have the most important facts about the author (with html tags).
+     * @param birthYear A short with the birth year of the author.
+     */
     AuthorsInfo(String name, String[] info, short birthYear) {
         this.info = info;
         this.name = name;
@@ -127,29 +133,42 @@ public enum AuthorsInfo {
         return name;
     }
 
+    /**
+     * Creates a map with 8 random authors and a random fact about them, got from the info array of the enum.
+     * The map is used to create the cards of the game.
+     * @return a map with the cards of the game.
+     */
     public static Map<String, String> createCardsMap() {
         Map<String, String> cards = new HashMap<>();
 
+        // Create an array with the indexes of the authors.
         int[] authorIndexes = new int[values().length];
         for (int i = 0; i < values().length; i++) {
             authorIndexes[i] = values()[i].ordinal();
         }
 
+        // Get 8 random authors and a random fact about them.
         for (int i = 0; i < 8; i++) {
+            // Get a random author.
             int randomIndex = (int) (Math.random() * authorIndexes.length);
             int authorIndex = authorIndexes[randomIndex];
+
+            // Creating a new array without the author that has been used so the map doesn't have repeated keys.
             int[] authorIndexesWithoutUsedAuthor = new int[authorIndexes.length - 1];
             System.arraycopy(authorIndexes, 0, authorIndexesWithoutUsedAuthor, 0, randomIndex);
             System.arraycopy(authorIndexes, randomIndex + 1, authorIndexesWithoutUsedAuthor, randomIndex, authorIndexes.length - randomIndex - 1);
+
+            // Replace the old array with the new one.
             authorIndexes = authorIndexesWithoutUsedAuthor;
 
+            // Get a random fact about the author.
             String[] infoArray = values()[authorIndex].getInfo();
             int randomInfoIndex = (int) (Math.random() * infoArray.length);
             String randomInfo = infoArray[randomInfoIndex];
 
+            // Add the author and the fact to the map.
             cards.put(values()[authorIndex].getName(), randomInfo);
         }
-
         return cards;
     }
 }

@@ -9,6 +9,7 @@ import java.awt.*;
 
 public class MainFrame extends JFrame {
 
+    // Creates the frame. It's the main window of the application.
     public MainFrame() {
         super("Jocs Literatura Valenciana");
         // Some Properties
@@ -22,12 +23,17 @@ public class MainFrame extends JFrame {
         setVisible(true);
     }
 
+    // Gets the panel in the center of the frame.
     public AppPanels getCenterPanel(){
         Container contentPane = getContentPane();
         BorderLayout layout = (BorderLayout) contentPane.getLayout();
         return (AppPanels) layout.getLayoutComponent(BorderLayout.CENTER);
     }
 
+    /**
+     * Sets the panel in the center of the frame.
+     * @param panel The panel to set. Must be a subclass of AppPanels.
+     */
     public void setCenterPanel(AppPanels panel){
         Container contentPane = getContentPane();
         BorderLayout layout = (BorderLayout) contentPane.getLayout();

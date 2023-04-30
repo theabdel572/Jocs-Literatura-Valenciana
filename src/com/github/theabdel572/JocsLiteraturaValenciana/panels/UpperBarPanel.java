@@ -25,6 +25,7 @@ public class UpperBarPanel extends JPanel implements AppPanels{
     }
 
 
+    //Painting Background Image.
     public void paintComponent(Graphics page) {
         super.paintComponent(page);
         try {

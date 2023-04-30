@@ -6,12 +6,18 @@ import java.util.Arrays;
 
 public class FlashCardButton extends JButton {
 
-    public FlashCardButton(String text, String[] info) {
-        super(text);
+    /** Creates a button with the author name and the birthdate as text of the button
+     * and the info as a flashcard in a new window.
+     * @param authorName The name of the author as a String.
+     * @param info An array containing the info of the author.
+     */
+    public FlashCardButton(String authorName, String[] info) {
+        super(authorName);
+
         addActionListener(e -> {
             JFrame flashcardFrame = new JFrame();
             JPanel flashcardPanel = new JPanel();
-            flashcardFrame.setTitle(text);
+            flashcardFrame.setTitle(authorName);
             flashcardPanel.setLayout(new BoxLayout(flashcardPanel, BoxLayout.Y_AXIS));
 
             JTextArea textArea = new JTextArea();
@@ -21,9 +27,11 @@ public class FlashCardButton extends JButton {
             textArea.setWrapStyleWord(true);
             textArea.setOpaque(false);
 
+            // Add the info array to the text area formatting it and removing html tags.
             Arrays.stream(info).forEach(s -> textArea.append(("- " + s + "\n\n")
                     .replaceAll("<html>", "").replaceAll("</html>", "")));
 
+            // Adding a space between the top of the window and the text area.
             flashcardPanel.add(Box.createVerticalStrut(10));
             flashcardPanel.add(textArea);
 

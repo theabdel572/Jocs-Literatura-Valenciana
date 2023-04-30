@@ -19,6 +19,7 @@ public class ResetButton extends JButton{
     private class ResetButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Check if the current panel is a MemoryCardsPanel, so it can reset it.
             if(!(parentFrame.getCenterPanel() instanceof MemoryCardsPanel)){
                 return;
             }
