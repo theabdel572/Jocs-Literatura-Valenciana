@@ -11,11 +11,15 @@ A desktop app made with Java Swing which has games and information about Valenci
 ***
 A desktop application that allows you to study Valencian literature while having fun and playing! 
 It has a memory cards gamemode to pair cards that contain an author's name and a random fact about some author, when you pair the cards correctly, they disappear. 
-You can press the "Reset" button to reset the cards and keep playing. 
+You can press the "Reinicialitzar" button to reset the cards and keep playing.
+Everytime you press that button or you open the memory cards game again, the window is filled another random authors and facts in a different order.
 There's also a gamemode called FlashCards where you can see authors with their birth date and when pressing on an author, 
 a window will appear with the most important information about the author.
-### Screenshot
-![image](https://user-images.githubusercontent.com/50650626/235360645-875476f2-b575-4987-a979-d880104926e4.png)
+### Screenshots
+![image](https://user-images.githubusercontent.com/50650626/235442034-9d39625e-6d4b-41c0-8f65-4fe364f240b1.png)
+![image](https://user-images.githubusercontent.com/50650626/235442150-b08c3382-52c7-4770-ba8d-42db30cf463f.png)
+![image](https://user-images.githubusercontent.com/50650626/235442262-0431fc12-8726-443d-a567-f39a5f71b62d.png)
+
 ## Technologies
 ***
 The program is fully made with Java 17 using Java Swing.
