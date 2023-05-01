@@ -2,18 +2,20 @@ package com.github.theabdel572.JocsLiteraturaValenciana.panels.components;
 
 import com.github.theabdel572.JocsLiteraturaValenciana.main.MainFrame;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.MemoryCardsPanel;
+import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.designs.ButtonDesign;
 
-import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ResetButton extends JButton{
+public class ResetButton extends ButtonDesign {
     private final MainFrame parentFrame;
 
     public ResetButton(MainFrame parentFrame) {
-        super("Reset");
+        setText("Reinicialitzar");
         this.parentFrame = parentFrame;
         addActionListener(new ResetButtonListener());
+        setForeground(Color.WHITE);
     }
 
     private class ResetButtonListener implements ActionListener {

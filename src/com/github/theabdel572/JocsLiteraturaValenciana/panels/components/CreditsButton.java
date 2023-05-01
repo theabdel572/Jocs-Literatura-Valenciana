@@ -1,5 +1,7 @@
 package com.github.theabdel572.JocsLiteraturaValenciana.panels.components;
 
+import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.designs.ButtonDesign;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,10 +10,11 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public class CreditsButton extends JButton {
+public class CreditsButton extends ButtonDesign {
     public CreditsButton() {
-        super("Crèdits");
+        setText("Crèdits");
         addActionListener(new Listener());
+        setForeground(Color.WHITE);
     }
 
     private final class Listener implements ActionListener{
@@ -22,7 +25,7 @@ public class CreditsButton extends JButton {
             creditsPane.setMessage("Desenvolupat per Abdel.\nDiscord: theabdel572#2908");
             creditsPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
 
-            // Adding the button to open the github repository.
+            // Adding the button to open the GitHub repository.
             creditsPane.setOptions(new Object[]{new JButton("Github"){
                 {
                     addActionListener(e -> {

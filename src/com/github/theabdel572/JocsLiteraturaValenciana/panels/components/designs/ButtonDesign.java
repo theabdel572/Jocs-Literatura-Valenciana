@@ -16,10 +16,18 @@ public class ButtonDesign extends JButton {
     public ButtonDesign() {
         //  Init Color
 
+        /* Other default option for colors
         setColor(Color.WHITE);
         colorOver = new Color(179, 250, 160);
         colorClick = new Color(152, 184, 144);
-        borderColor = new Color(30, 136, 56);
+        borderColor = new Color(30, 136, 56);*/
+
+        setBorderColor(Color.BLUE);
+        setColor(new Color(50, 144, 255));
+        setColorOver(new Color(50, 130, 240));
+        setColorClick(new Color(180, 214, 255));
+
+        setBorder(new RoundedBorder(7, true));
         setContentAreaFilled(false);
         //  Add event mouse
         addMouseListener(new MouseAdapter() {

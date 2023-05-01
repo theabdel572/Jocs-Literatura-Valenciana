@@ -1,10 +1,12 @@
 package com.github.theabdel572.JocsLiteraturaValenciana.panels.components;
 
+import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.designs.ButtonDesign;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Arrays;
 
-public class FlashCardButton extends JButton {
+public class FlashCardButton extends ButtonDesign {
 
     /** Creates a button with the author name and the birthdate as text of the button
      * and the info as a flashcard in a new window.
@@ -12,7 +14,8 @@ public class FlashCardButton extends JButton {
      * @param info An array containing the info of the author.
      */
     public FlashCardButton(String authorName, String[] info) {
-        super(authorName);
+        setText(authorName);
+        setForeground(Color.WHITE);
 
         addActionListener(e -> {
             JFrame flashcardFrame = new JFrame();
