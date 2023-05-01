@@ -4,7 +4,6 @@ import com.github.theabdel572.JocsLiteraturaValenciana.main.MainFrame;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.MemoryCardsPanel;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.designs.ButtonDesign;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,7 +14,6 @@ public class ResetButton extends ButtonDesign {
         setText("Reinicialitzar");
         this.parentFrame = parentFrame;
         addActionListener(new ResetButtonListener());
-        setForeground(Color.WHITE);
     }
 
     private class ResetButtonListener implements ActionListener {

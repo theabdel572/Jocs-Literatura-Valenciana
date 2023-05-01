@@ -15,7 +15,6 @@ public class FlashCardButton extends ButtonDesign {
      */
     public FlashCardButton(String authorName, String[] info) {
         setText(authorName);
-        setForeground(Color.WHITE);
 
         addActionListener(e -> {
             JFrame flashcardFrame = new JFrame();

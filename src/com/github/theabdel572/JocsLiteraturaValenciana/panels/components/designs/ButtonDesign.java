@@ -22,6 +22,7 @@ public class ButtonDesign extends JButton {
         colorClick = new Color(152, 184, 144);
         borderColor = new Color(30, 136, 56);*/
 
+        setForeground(Color.WHITE);
         setBorderColor(Color.BLUE);
         setColor(new Color(50, 144, 255));
         setColorOver(new Color(50, 130, 240));

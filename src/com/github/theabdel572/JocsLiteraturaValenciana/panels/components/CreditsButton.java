@@ -14,7 +14,6 @@ public class CreditsButton extends ButtonDesign {
     public CreditsButton() {
         setText("Crèdits");
         addActionListener(new Listener());
-        setForeground(Color.WHITE);
     }
 
     private final class Listener implements ActionListener{

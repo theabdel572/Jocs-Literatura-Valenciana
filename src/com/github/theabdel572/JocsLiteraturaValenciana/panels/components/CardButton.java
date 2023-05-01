@@ -1,16 +1,15 @@
 package com.github.theabdel572.JocsLiteraturaValenciana.panels.components;
 
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.MemoryCardsPanel;
-import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.designs.ButtonDesign;
+import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.designs.RoundedBorder;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.Map;
 
-public class CardButton extends ButtonDesign {
+public class CardButton extends JButton {
     private final String text;
     private final MemoryCardsPanel parentPanel;
 
@@ -19,10 +18,7 @@ public class CardButton extends ButtonDesign {
         this.parentPanel = parentPanel;
         addActionListener(new Listener());
 
-        // Changing some decoration of the button.
-        setBorderColor(new Color(50, 144, 255));
-        setColor(Color.WHITE);
-        setColorOver(new Color(225, 239, 255));
+        setBorder(new RoundedBorder(9, false));
     }
 
     /** The actions to execute when the player clicks the second button when trying to pair two cards.
