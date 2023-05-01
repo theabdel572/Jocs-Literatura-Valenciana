@@ -37,6 +37,7 @@ public class FlashCardButton extends ButtonDesign {
             flashcardPanel.add(Box.createVerticalStrut(10));
             flashcardPanel.add(textArea);
 
+            flashcardFrame.setIconImage(new ImageIcon("src/com/github/theabdel572/JocsLiteraturaValenciana/resources/icon.png").getImage());
             flashcardFrame.setSize(700, 700);
             flashcardFrame.add(flashcardPanel);
             flashcardFrame.setVisible(true);
