@@ -16,7 +16,9 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
         setResizable(false);
-        setIconImage(new ImageIcon("src/com/github/theabdel572/JocsLiteraturaValenciana/resources/icon.png").getImage());
+
+        setIconImage(new ImageIcon(getClass().getResource("/com/github/theabdel572/JocsLiteraturaValenciana/resources/icon.png")).getImage());
+
         // Adding Panels
         add(new UpperBarPanel(this), BorderLayout.NORTH);
         add(new MemoryCardsPanel(this), BorderLayout.CENTER);

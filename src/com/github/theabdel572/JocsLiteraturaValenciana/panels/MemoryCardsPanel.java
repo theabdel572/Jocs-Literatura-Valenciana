@@ -3,13 +3,10 @@ package com.github.theabdel572.JocsLiteraturaValenciana.panels;
 import com.github.theabdel572.JocsLiteraturaValenciana.main.AuthorsInfo;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.CardButton;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 
 public class MemoryCardsPanel extends JPanel implements AppPanels{
     // The CardButton and String arrays that store the clicked cards (which reset after the second card is clicked).
@@ -40,11 +37,9 @@ public class MemoryCardsPanel extends JPanel implements AppPanels{
     // Paint the background image.
     public void paintComponent(Graphics page) {
         super.paintComponent(page);
-        try {
-            page.drawImage(ImageIO.read(new File("src/com/github/theabdel572/JocsLiteraturaValenciana/resources/background1.png")), 0, 0, null);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        page.drawImage(
+                new ImageIcon(getClass().getResource("/com/github/theabdel572/JocsLiteraturaValenciana/resources/background1.png")).getImage(),
+                0, 0, null);
     }
 
     // Execute the proper actions when a correct pair of cards is clicked.

@@ -5,11 +5,8 @@ import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.Credits
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.GamemodesComboBox;
 import com.github.theabdel572.JocsLiteraturaValenciana.panels.components.ResetButton;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class UpperBarPanel extends JPanel implements AppPanels{
     private final JFrame parentFrame;
@@ -28,11 +25,9 @@ public class UpperBarPanel extends JPanel implements AppPanels{
     //Painting Background Image.
     public void paintComponent(Graphics page) {
         super.paintComponent(page);
-        try {
-            page.drawImage(ImageIO.read(new File("src/com/github/theabdel572/JocsLiteraturaValenciana/resources/background1.png")), 0, 0, null);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        page.drawImage(
+                new ImageIcon(getClass().getResource("/com/github/theabdel572/JocsLiteraturaValenciana/resources/background1.png")).getImage(),
+                0, 0, null);
     }
 
 
