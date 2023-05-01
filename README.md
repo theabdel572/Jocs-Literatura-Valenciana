@@ -27,9 +27,10 @@ The program is fully made with Java 17 using Java Swing.
 ***
 A little intro about the installation.
 ```
-The only thing you need to do is go to the [releases](https://github.com/theabdel572/Jocs-Literatura-Valenciana/releases) section of this repo and download the .exe (if you are on Windows) 
+The only thing you need to do is go to the releases section of this repo and download the .exe (if you are on Windows) 
 or the .jar (that works on every operative system but you need to have the JRE aka. Java installed on your computer).
 ```
+->[Releases](https://github.com/theabdel572/Jocs-Literatura-Valenciana/releases)<-
 ## Collaboration
 ***
 Instructions:
