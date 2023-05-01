@@ -11,7 +11,7 @@ public class MainFrame extends JFrame {
 
     // Creates the frame. It's the main window of the application.
     public MainFrame() {
-        super("Jocs Literatura Valenciana");
+        super("Jocs Literatura Valenciana v1.0.0");
         // Some Properties
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
