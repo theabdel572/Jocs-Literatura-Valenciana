@@ -1,4 +1,4 @@
-package com.github.theabdel572.JocsLiteraturaValenciana.panels.components;
+package com.github.theabdel572.JocsLiteraturaValenciana.panels.components.designs;
 
 import javax.swing.border.Border;
 import java.awt.*;
@@ -6,9 +6,11 @@ import java.awt.*;
 public class RoundedBorder implements Border {
 
     private final int radius;
+    private final boolean invisibleBorder;
 
 
-    RoundedBorder(int radius) {
+    public RoundedBorder(int radius, boolean invisibleBorder) {
+        this.invisibleBorder = invisibleBorder;
         this.radius = radius;
     }
 
@@ -24,6 +26,7 @@ public class RoundedBorder implements Border {
 
 
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
+        if(invisibleBorder){return;}
         g.drawRoundRect(x, y, width-1, height-1, radius, radius);
     }
 }
