@@ -26,6 +26,7 @@ The program is fully made with Java 17 using Java Swing.
 ## Installation
 ***
 A little intro about the installation.
+The first thing that you MUST have in mind is that you need at least Java 17 installed.
 ```
 The only thing you need to do is go to the releases section of this repo and download the .exe (if you are on Windows) 
 or the .jar (that works on every operative system but you need to have the JRE aka. Java installed on your computer).
@@ -42,6 +43,8 @@ Instructions:
 A list of frequently asked questions.
 1. **I discovered a bug, where should I report it?**
 _In the Issues section of this repo._ 
+2. **Do I need to have Java installed?**
+_Yes, you need at least Java 17 to run the application properly._
 
 <!--- Example formats of questions.
 2. __Second question in bold__ 
